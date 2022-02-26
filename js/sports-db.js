@@ -45,7 +45,7 @@ const displayData = (data) => {
     }
   }
 };
-window.onload = getAllSports;
+getAllSports();
 
 // Fetch Search By Name Function
 const searchPlayer = async () => {
@@ -136,6 +136,87 @@ const displaySearchPlayer = (data) => {
   }
 };
 
-const getById = (data) => {
-  console.log(data);
+const getById = async (data) => {
+  const baseUrl = `https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${data}`;
+  const request = await fetch(baseUrl);
+  const playerDetails = await request.json();
+  displaySinglePlayer(playerDetails.players[0]);
 };
+
+const displaySinglePlayer = (player) => {
+  document.getElementById("singla-player").classList.remove("hidden");
+  const sweetPopUpBox = document.getElementById("sweet-popup-box");
+  console.log(player);
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <div><img src="${player.strCutout}" alt="" /></div>
+  `;
+  sweetPopUpBox.appendChild(div);
+};
+
+// Close It Button
+document.getElementById("close-it").addEventListener("click", () => {
+  document.getElementById("singla-player").classList.add("hidden");
+});
+
+/* 
+dateBorn: "1985-12-08"
+dateSigned: "2013-08-24"
+idAPIfootball: "2091"
+idPlayer: "34156492"
+idPlayerManager: null
+idSoccerXML: "854"
+idTeam: "137154"
+idTeam2: "0"
+idTeamNational: null
+intLoved: "0"
+intSoccerXMLTeamID: "854"
+strAgent: ""
+strBanner: null
+strBirthLocation: "Fortaleza, Brazil"
+strCollege: null
+strCreativeCommons: "No"
+strCutout: "https://www.thesportsdb.com/images/media/player/cutout/4merk11622407573.png"
+strDescriptionCN: null
+strDescriptionDE: null
+strDescriptionEN: null
+strDescriptionES: null
+strDescriptionFR: null
+strDescriptionHU: null
+strDescriptionIL: null
+strDescriptionIT: null
+strDescriptionJP: null
+strDescriptionNL: null
+strDescriptionNO: null
+strDescriptionPL: null
+strDescriptionPT: null
+strDescriptionRU: null
+strDescriptionSE: null
+strFacebook: ""
+strFanart1: null
+strFanart2: null
+strFanart3: null
+strFanart4: null
+strGender: "Male"
+strHeight: "182 cm"
+strInstagram: ""
+strKit: ""
+strLocked: "unlocked"
+strNationality: "Russian Federation"
+strNumber: "9"
+strOutfitter: ""
+strPlayer: "Ari"
+strPosition: "Forward"
+strRender: null
+strSide: ""
+strSigning: "Signed"
+strSport: "Soccer"
+strTeam: "_Free Agent Soccer"
+strTeam2: ""
+strThumb: "https://www.thesportsdb.com/images/media/player/thumb/8qd50z1622407508.jpg"
+strTwitter: ""
+strWage: ""
+strWebsite: ""
+strWeight: "87 kg"
+strYoutube: ""
+*/
