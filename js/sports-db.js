@@ -120,11 +120,6 @@ const displaySearchPlayer = (data) => {
            items.strPosition
          }</h2>
          <h2>Sports: ${items.strSport}</h2>
-         <h2>BirthLoc: ${
-           items.strBirthLocation ? items.strBirthLocation : "Not Shared"
-         }</h2>
-         <h2>Team: ${items.strTeam}</h2>
-         <h2>Weight: ${items.strWeight}</h2>
          <button class="mt-2 font-bold rounded-md border text-white bg-slate-800 px-2 py-1" onclick="getById(${
            items.idPlayer
          })">Details</button>
@@ -144,79 +139,38 @@ const getById = async (data) => {
 };
 
 const displaySinglePlayer = (player) => {
-  document.getElementById("singla-player").classList.remove("hidden");
   const sweetPopUpBox = document.getElementById("sweet-popup-box");
-  console.log(player);
+  sweetPopUpBox.innerText = "";
+  document.getElementById("singla-player").classList.remove("hidden");
+  document.body.style.overflow = "hidden";
   const div = document.createElement("div");
   div.innerHTML = `
-    <div><img src="${player.strCutout}" alt="" /></div>
+  <div class="relative">
+    <span id="close-it"class="cursor-pointer absolute top-3 text-2xl text-red-600 right-5 z-50">X</span>
+  </div>
+    <h1 class="rounded-lg text-center bg-slate-500 text-slate-50 text-lg font-bold ">Name: ${
+      player.strPlayer
+    }</h1>
+    <div class="p-4 "><img class="rounded-md" src="${
+      player.strCutout ? player.strCutout : player.strThumb
+    }" alt="${player.strPlayer}" /></div>
+    <div class="py-5 px-4 text-lg">
+        <h2>Born ${player.dateBorn}</h2>
+        <h2>BirthLocation: ${player.strBirthLocation}</h2>
+        <h2>Nationality: ${player.strNationality}</h2>
+        <h2>Sport: ${player.strSport}</h2>
+        <h2>Position: ${player.strPosition}</h2>
+        <h2>Team: ${player.strTeam}</h2>
+        <h2>Weight: ${player.strWeight}</h2>
+    </div>
   `;
   sweetPopUpBox.appendChild(div);
 };
 
 // Close It Button
-document.getElementById("close-it").addEventListener("click", () => {
-  document.getElementById("singla-player").classList.add("hidden");
+document.getElementById("sweet-popup-box").addEventListener("click", (e) => {
+  if (e.target.getAttribute("id") === "close-it") {
+    document.getElementById("singla-player").classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }
 });
-
-/* 
-dateBorn: "1985-12-08"
-dateSigned: "2013-08-24"
-idAPIfootball: "2091"
-idPlayer: "34156492"
-idPlayerManager: null
-idSoccerXML: "854"
-idTeam: "137154"
-idTeam2: "0"
-idTeamNational: null
-intLoved: "0"
-intSoccerXMLTeamID: "854"
-strAgent: ""
-strBanner: null
-strBirthLocation: "Fortaleza, Brazil"
-strCollege: null
-strCreativeCommons: "No"
-strCutout: "https://www.thesportsdb.com/images/media/player/cutout/4merk11622407573.png"
-strDescriptionCN: null
-strDescriptionDE: null
-strDescriptionEN: null
-strDescriptionES: null
-strDescriptionFR: null
-strDescriptionHU: null
-strDescriptionIL: null
-strDescriptionIT: null
-strDescriptionJP: null
-strDescriptionNL: null
-strDescriptionNO: null
-strDescriptionPL: null
-strDescriptionPT: null
-strDescriptionRU: null
-strDescriptionSE: null
-strFacebook: ""
-strFanart1: null
-strFanart2: null
-strFanart3: null
-strFanart4: null
-strGender: "Male"
-strHeight: "182 cm"
-strInstagram: ""
-strKit: ""
-strLocked: "unlocked"
-strNationality: "Russian Federation"
-strNumber: "9"
-strOutfitter: ""
-strPlayer: "Ari"
-strPosition: "Forward"
-strRender: null
-strSide: ""
-strSigning: "Signed"
-strSport: "Soccer"
-strTeam: "_Free Agent Soccer"
-strTeam2: ""
-strThumb: "https://www.thesportsdb.com/images/media/player/thumb/8qd50z1622407508.jpg"
-strTwitter: ""
-strWage: ""
-strWebsite: ""
-strWeight: "87 kg"
-strYoutube: ""
-*/
