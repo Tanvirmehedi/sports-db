@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports DB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main>
+      <section class="my-3">
+        <div class="mx-auto w-11/12 text-center">
+          <input id="search-box" type="text" class="border border-r-0 pl-1" />
+          <button
+            id="search-button"
+            onclick="searchPlayer()"
+            class="border border-l-0 -m-1 pr-1 pl-2 rounded-sm"
+          >
+            Search
+          </button>
+        </div>
+      </section>
+      <!-- END OF SEARCH BOX -->
+      <section id="display-player" class="hidden my-2 mx-auto">
+        <div
+          id="player-grid-box"
+          class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-11/12 mx-auto"
+        ></div>
+      </section>
+      <!-- SEARCH BY PLAYER NAME -->
+      <section id="display-sports" class="my-2 mx-auto">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4 w-11/12 mx-auto"
+          id="sports-grid-box"
+        ></div>
+      </section>
+    </main>
+    <script src="js/sports-db.js"></script>
+  </body>
+</html>
