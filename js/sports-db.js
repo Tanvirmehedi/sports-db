@@ -45,7 +45,6 @@ const displayData = (data) => {
     }
   }
 };
-getAllSports();
 
 // Fetch Search By Name Function
 const searchPlayer = async () => {
@@ -178,3 +177,4 @@ document.getElementById("sweet-popup-box").addEventListener("click", (e) => {
     document.body.style.overflow = "auto";
   }
 });
+getAllSports();
