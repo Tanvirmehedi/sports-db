@@ -8,22 +8,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="z-0 relative">
-    <section id="singla-player" class="hidden z-50 fixed w-full top-2">
+    <section id="single-player" class="hidden z-50 fixed w-full top-2">
       <div
         id="sweet-popup-box"
         class="relative h-screen bg-slate-700 text-white w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/2 mx-auto rounded-md overflow-y-scroll transition-all px-3 py-2"
-      >
-        
-      </div>
+      ></div>
     </section>
     <main>
       <section class="my-3">
         <div class="mx-auto w-11/12 text-center">
-          <input id="search-box" type="text" class="border border-r-0 pl-1" />
+          <input
+            id="search-box"
+            type="text"
+            class="w-4/5 sm:w-2/5 md:w-2/5 border rounded-l-md border-r-0 pl-1 py-1 bg-slate-700 text-slate-50"
+          />
           <button
             id="search-button"
             onclick="searchPlayer()"
-            class="border border-l-0 -m-1 pr-1 pl-2 rounded-sm"
+            class="border border-l-2 -m-1 pr-2 font-semibold pl-2 py-1 rounded-r-md bg-slate-700 text-slate-50"
           >
             Search
           </button>

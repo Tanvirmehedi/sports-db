@@ -38,7 +38,7 @@ const displayData = (data) => {
                 ? strSportDescription.slice(0, 100)
                 : strSportDescription
             }...</p>
-            <a href="#" class="inline-block mt-3 text-white border px-4 py-1 bg-black  rounded-md font-semibold">Details</a> 
+            <a href="#" class="inline-block mt-3 text-white border px-4 py-1 bg-black  rounded-md font-semibold ">Details</a> 
         </div>
     </div>`;
       gridBox.appendChild(div);
@@ -76,7 +76,7 @@ const searchBox = () => {
     alert("Dont Type The Text Box Number");
     searchBox.value = "";
   } else if (/[^a-zA-Z0-9\-\/]/.test(searchValue)) {
-    alert("Dont Type The Text Box Sepcial Carecters");
+    alert("Dont Type The Text Box Special Characters");
     searchBox.value = "";
   } else {
     searchBox.value = "";
@@ -145,17 +145,17 @@ const getById = async (data) => {
 const displaySinglePlayer = (player) => {
   const sweetPopUpBox = document.getElementById("sweet-popup-box");
   sweetPopUpBox.innerText = "";
-  document.getElementById("singla-player").classList.remove("hidden");
+  document.getElementById("single-player").classList.remove("hidden");
   document.body.style.overflow = "hidden";
   const div = document.createElement("div");
   div.innerHTML = `
-  <div class="relative">
-    <span id="close-it"class="cursor-pointer absolute top-3 text-2xl text-red-600 right-5 z-50">X</span>
+  <div class="relative text-right flex justify-end">
+    <div id="close-it" class="fixed text-red-500 cursor-pointer mr-4 text-2xl font-bold">X</div>
   </div>
     <h1 class="rounded-lg text-center bg-slate-500 text-slate-50 text-lg font-bold ">Name: ${
       player.strPlayer
     }</h1>
-    <div class="p-4 "><img class="rounded-md" src="${
+    <div class="p-4 text-center "><img class="mx-auto rounded-md" src="${
       player.strCutout ? player.strCutout : player.strThumb
     }" alt="${player.strPlayer}" /></div>
     <div class="py-5 px-4 text-lg">
@@ -174,7 +174,7 @@ const displaySinglePlayer = (player) => {
 // Close It Button
 document.getElementById("sweet-popup-box").addEventListener("click", (e) => {
   if (e.target.getAttribute("id") === "close-it") {
-    document.getElementById("singla-player").classList.add("hidden");
+    document.getElementById("single-player").classList.add("hidden");
     document.body.style.overflow = "auto";
   }
 });
