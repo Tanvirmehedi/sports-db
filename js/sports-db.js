@@ -141,7 +141,7 @@ const getById = async (data) => {
 const displaySinglePlayer = (player) => {
   const sweetPopUpBox = document.getElementById("sweet-popup-box");
   sweetPopUpBox.innerText = "";
-  document.getElementById("singla-player").classList.remove("hidden");
+  document.getElementById("single-player").classList.remove("hidden");
   document.body.style.overflow = "hidden";
   const div = document.createElement("div");
   div.innerHTML = `
@@ -170,7 +170,7 @@ const displaySinglePlayer = (player) => {
 // Close It Button
 document.getElementById("sweet-popup-box").addEventListener("click", (e) => {
   if (e.target.getAttribute("id") === "close-it") {
-    document.getElementById("singla-player").classList.add("hidden");
+    document.getElementById("single-player").classList.add("hidden");
     document.body.style.overflow = "auto";
   }
 });
