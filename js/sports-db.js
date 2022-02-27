@@ -151,7 +151,7 @@ const displaySinglePlayer = (player) => {
     <h1 class="rounded-lg text-center bg-slate-500 text-slate-50 text-lg font-bold ">Name: ${
       player.strPlayer
     }</h1>
-    <div class="p-4 text-center "><img class="rounded-md" src="${
+    <div class="p-4 text-center "><img class="mx-auto rounded-md" src="${
       player.strCutout ? player.strCutout : player.strThumb
     }" alt="${player.strPlayer}" /></div>
     <div class="py-5 px-4 text-lg">
