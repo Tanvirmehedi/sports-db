@@ -146,7 +146,7 @@ const displaySinglePlayer = (player) => {
   const div = document.createElement("div");
   div.innerHTML = `
   <div class="relative text-right flex justify-end">
-    <div id="close-it" class="fixed text-red-500 cursor-pointer mr-4 text-lg font-bold">X</div>
+    <div id="close-it" class="fixed text-red-500 cursor-pointer mr-4 text-2xl font-bold">X</div>
   </div>
     <h1 class="rounded-lg text-center bg-slate-500 text-slate-50 text-lg font-bold ">Name: ${
       player.strPlayer
