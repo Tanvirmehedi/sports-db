@@ -145,8 +145,8 @@ const displaySinglePlayer = (player) => {
   document.body.style.overflow = "hidden";
   const div = document.createElement("div");
   div.innerHTML = `
-  <div class="relative">
-    <span id="close-it"class="cursor-pointer absolute top-3 text-2xl text-red-600 right-5 z-50">X</span>
+  <div class="relative text-right flex justify-end">
+    <div id="close-it" class="fixed text-red-500 cursor-pointer mr-4 text-lg font-bold">X</div>
   </div>
     <h1 class="rounded-lg text-center bg-slate-500 text-slate-50 text-lg font-bold ">Name: ${
       player.strPlayer
