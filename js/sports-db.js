@@ -132,10 +132,14 @@ const displaySearchPlayer = (data) => {
 };
 
 const getById = async (data) => {
-  const baseUrl = `https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${data}`;
-  const request = await fetch(baseUrl);
-  const playerDetails = await request.json();
-  displaySinglePlayer(playerDetails.players[0]);
+  try {
+    const baseUrl = `https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${data}`;
+    const request = await fetch(baseUrl);
+    const playerDetails = await request.json();
+    displaySinglePlayer(playerDetails.players[0]);
+  } catch (err) {
+    alert(err);
+  }
 };
 
 const displaySinglePlayer = (player) => {
