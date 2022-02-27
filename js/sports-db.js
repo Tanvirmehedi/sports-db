@@ -38,7 +38,7 @@ const displayData = (data) => {
                 ? strSportDescription.slice(0, 100)
                 : strSportDescription
             }...</p>
-            <a href="#" class="inline-block mt-3 text-white border px-4 py-1 bg-black  rounded-md font-semibold">Details</a> 
+            <a href="#" class="inline-block mt-3 text-white border px-4 py-1 bg-black  rounded-md font-semibold ">Details</a> 
         </div>
     </div>`;
       gridBox.appendChild(div);
@@ -76,7 +76,7 @@ const searchBox = () => {
     alert("Dont Type The Text Box Number");
     searchBox.value = "";
   } else if (/[^a-zA-Z0-9\-\/]/.test(searchValue)) {
-    alert("Dont Type The Text Box Sepcial Carecters");
+    alert("Dont Type The Text Box Special Characters");
     searchBox.value = "";
   } else {
     searchBox.value = "";
